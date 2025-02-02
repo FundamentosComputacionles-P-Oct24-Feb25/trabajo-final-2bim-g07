@@ -1,0 +1,271 @@
+1. Inicio
+2. funcion principal()
+3.	bandera ,l <-- true
+4. 	numero, i[0,n]
+5. 	contador, i [0,n] <-- 0
+6. 	mensaje, x(200) [{A-Z} {a-z} {BS}}
+7. 	contadores[7], i[0,n]
+8. 	reporte, x(200) [{A-Z} {a-z} {BS}]
+9. 	actividades[7] x(200) [{A-Z} {a-z} {BS}] <-- {"Futbol","Natacion","Atletismo","Basquetbol",
+							"Ciclismo", "Tenis", "Yoga"}
+10.	salida, x(100) [{A-Z} {a-z} {BS}] 
+11. 	Mientras(bandera == true) haga
+12. 		<<"Ingrese un numero para el registro\n 1)Futbol\n2)Natacion\n3)Atletismo\n
+			4)Basquetbol\n5)Ciclismo\n6)Tenis\n7)Yoga\n"
+13. 		>>numero
+14.		Si(numero <-- 1) entonces
+15.			registrarParticipanteFutbol()
+16.			contadores[numero-1] <-- contadores[numero-1] +1
+17.		De lo contrario
+18.			Si(numero <-- 2) entonces
+19.				registrarParticipanteNatacion()
+20.				contadores[numero-1] <-- contadores[numero-1] +1
+21.			De lo contario
+22.				Si(numero <-- 3) entonces
+23.					registrarParticipanteAtletismo()
+24.					contadores[numero-1] <-- contadores[numero-1] +1
+25.				De lo contrario
+26. 					Si(numero <-- 4) entonces
+27.						registrarParticipanteBasquetbol()
+28.						contadores[numero-1] <-- contadores[numero-1] +1
+29.					De lo contrario
+30.						Si(numero <-- 5) entonces
+31.							registrarParticipanteCiclismo()
+32.							contadores[numero-1] <-- contadores[numero-1] +1
+33.						De lo contrario
+34.							Si(numero <-- 6) entonces
+35.								registrarParticipanteTenis()
+36.								contadores[numero-1] <-- contadores[numero-1] +1
+37.							De lo contrario
+38.								Si(numero <-- 7) entonces
+39.									registrarParticipanteYoga()
+40.									contadores[numero-1] <-- contadores[numero-1] +1
+41.								De lo contrario
+42.									<<"Esta actividad no esta disponible en el club"
+43.									contador <-- contador -1								
+44.								FinSi
+45.							FinSi
+46.						FinSi
+47.					FinSi
+48.				FinSi
+49.			FinSi
+50.		FinSi
+51. 		<<"Ingrese (si) para salir del ciclo"
+52		>>salida
+53.		Si(salida <-- "si") entonces
+54. 			bandera <-- false
+55.		FinSi
+56.		contador <-- contador + 1
+57.	FinMientras
+58.	mensaje <-- obtenerInformacion (contador)
+59.	<<mensaje
+60. 	reporte <-- obtenerReporte (contadores ; actividades)
+61.	<<reporte
+62. fin funcion principal
+
+63. función obtenerInformacion(contador, i) :x
+64. 	mensaje, x(200) [{A-Z} {a-z} BS]
+65.	mensaje <-- "Total de actividades creadas" + contaddor + "\nd"
+66. 	Si(contador <-- 0) entonces
+67. 		mensaje <-- mensaje + "Mala campaña, debemos mejorar"
+68. 	De lo contario
+69. 		Si(contador >= 1 and contador <= 5) entonces
+70.			mensaje <-- mensaje + "Para participación en el club, hay que mejorar"
+71.		De lo contario
+72.			Si(contador >= 6 and contador <= 15) entonces
+73.				mensaje <-- mensaje + "Buena participación, sigue así"
+74.			De lo contrario
+75.				Si(contador >= 16) entonces
+76.					mensaje <-- mensaje + "Excelente campaña del club"
+77.				FinSi
+78.			FinSi
+79.		FinSi
+80.	FinSi
+81.	retorna mensaje
+82. fin función obtenerInformacion
+
+83. función obtenerReporte(contadores[], i ; actividades[], x) :x
+84. 	i, i [0,n]
+85.	cadena, x [{A-Z} {a-z} BS]
+86. 	Para(i <-- 0, i < 7, 1) haga
+87.		cadena <-- cadena + i + 1 + "1. Numero de participantes de" + actividades[i] + ":" 
+			+ contadores[i] + "\n"
+88.	FinPara
+89. 	retorna cadena
+90. fin función obtenerReporte
+
+91. función registrarParticipanteFutbol()
+92. 	nombre, x(200) [{A-Z} {a-z} BS]
+93. 	edad, i [0,n]
+94.	posición, x(200) [{A-Z} {a-z} BS]
+95.	ciudad, x(200) [{A-Z} {a-z} BS]
+96.	equipo, x(500) [{A-Z} {a-z} BS]
+97.	cadena, x(1000) [{A-Z} {a-z} BS] <-- ""
+98.	<<"Ingrese el nombre del participante"
+99. 	>>nombre
+100.	<<"Ingrese la posición favorita del participante"
+101. 	>>posición
+102.	<<"Ingrese la edad del participante"
+103.	>>edad
+104.	<<"Ingrese la ciudad del participante"
+105.	>>ciudad
+106.	<<"Ingrese el equipo favorito del participante"
+107.	>>equipo
+
+108.	cadena <-- cadena + "Nombre:" + nombre" + \n" + "Edad:" + edad" + \n" + "Posición favorita:" +
+			+ posición" + \n" + "Ciudad:" + ciudad" + \n" + "Equipo favorito:" + equipo" + \n"
+109.	<<cadena
+110. fin funcion registrarParticipanteFutbol
+
+111. funcion registarParticipanteNatacion()
+112.	nombre, x(200) [{A-Z} {a-z} BS]
+113. 	edad, i [0,n]
+114.	nivel, x(200) [{A-Z} {a-z} BS]
+115.	ciudad, x(200) [{A-Z} {a-z} BS]
+116.	estilo, x(500) [{A-Z} {a-z} BS]
+117.	cadena, x(1000) [{A-Z} {a-z} BS] <-- ""
+118.	<<"Ingrese el nombre del participante"
+119.	>>nombre
+120.	<<"Ingrese el nivel del participante (Principiante, Intermedio, Avanzado)"
+121. 	>>nivel
+122.	<<"Ingrese la edad del participante"
+123.	>>edad
+124.	<<"Ingrese la ciudad del participante"
+125.	>>ciudad
+126.	<<"Ingrese el estilo favorito del participante"
+127.	>>estilo
+
+128.	cadena <-- cadena + "Nombre:" + nombre" + \n" + "Edad:" + edad" + \n" + "Nivel:" +
+			+ nivel" + \n" + "Ciudad:" + ciudad" + \n" + "Estilo favorito:" + estilo" + \n"
+129.	<<cadena
+130. fin funcion registrarParticipanteNatacion
+
+131. funcion registarParticipanteAtletismo()
+132. 	nombre, x(200) [{A-Z} {a-z} BS]
+133. 	edad, i [0,n]
+134.	especialidad, x(200) [{A-Z} {a-z} BS]
+135.	ciudad, x(200) [{A-Z} {a-z} BS]
+136.	record, d [0,n]
+137.	cadena, x(1000) [{A-Z} {a-z} BS] <-- ""
+138.	<<"Ingrese el nombre del participante"
+139.	>>nombre
+140.	<<"Ingrese la especialidad del participante (Carreras, Saltos, Lanzamiento)"
+141. 	>>especialidad
+142.	<<"Ingrese la edad del participante"
+143.	>>edad
+144.	<<"Ingrese la ciudad del participante"
+145.	>>ciudad
+146.	<<"Ingrese el record personal del participante"
+147.	>>record
+
+148.	cadena <-- cadena + "Nombre:" + nombre" + \n" + "Edad:" + edad" + \n" + "Especialidad:" +
+			+ especialidad" + \n" + "Ciudad:" + ciudad" + \n" + "Record personal:" + record" + \n"
+149.	<<cadena
+150. fin función registrarParticipanteAtletismo
+
+151. función registrarParticipanteBasquetbol()
+152. 	nombre, x(200) [{A-Z} {a-z} BS]
+153. 	edad, i [0,n]
+154.	posicion, x(200) [{A-Z} {a-z} BS]
+155.	ciudad, x(200) [{A-Z} {a-z} BS]
+156.	estatura, d[0,n]
+157.	cadena, x(1000) [{A-Z} {a-z} BS] <-- ""
+158.	<<"Ingrese el nombre del participante"
+159.	>>nombre
+160.	<<"Ingrese la posición preferida del participante"
+161. 	>>posicion
+162.	<<"Ingrese la edad del participante"
+163.	>>edad
+164.	<<"Ingrese la ciudad del participante"
+165.	>>ciudad
+166.	<<"Ingrese la estatura del participante"
+167.	>>estatura
+
+168.	cadena <-- cadena + "Nombre:" + nombre" + \n" + "Edad:" + edad" + \n" + "Posición favorita:" +
+			+ posicion" + \n" + "Estatura:" + estatura" + \n" + "Ciudad:" + ciudad" + \n"
+169.	<<cadena
+170. fin función registrarParticipanteBasquetbol
+
+171. función registrarParticipanteCiclismo()
+172.  	nombre, x(200) [{A-Z} {a-z} BS]
+173. 	edad, i [0,n]
+174.	tipo, x(200) [{A-Z} {a-z} BS]
+175.	ciudad, x(200) [{A-Z} {a-z} BS]
+176.	marca, x(500) [{A-Z} {a-z} BS]
+177.	cadena, x(1000) [{A-Z} {a-z} BS] <-- ""
+178.	<<"Ingrese el nombre del participante"
+179.	>>nombre
+180.	<<"Ingrese el tipo de ciclismo (Montaña, Ruta, Urbano)"
+181. 	>>tipo
+182.	<<"Ingrese la edad del participante"
+183.	>>edad
+184.	<<"Ingrese la ciudad del participante"
+185.	>>ciudad
+186.	<<"Ingrese la marca de bicicletas preferida"
+187.	>>marca
+
+188.	cadena <-- cadena + "Nombre:" + nombre" + \n" + "Edad:" + edad" + \n" + "Tipo de ciclismo:" +
+			+ tipo" + \n" + "Ciudad:" + ciudad" + \n" + "Marca favorita:" + marca" + \n"
+189.	<<cadena
+190. fin función registrarParticipanteCiclismo
+
+191. función registrarParticipanteTenis()
+192. 	nombre, x(200) [{A-Z} {a-z} BS]
+193. 	edad, i [0,n]
+194.	nivel, x(200) [{A-Z} {a-z} BS]
+195.	ciudad, x(200) [{A-Z} {a-z} BS]
+196.	mano, x(500) [{A-Z} {a-z} BS]
+197.	cadena, x(1000) [{A-Z} {a-z} BS] <-- ""
+198.	<<"Ingrese el nombre del participante"
+199.	>>nombre
+200.	<<"Ingrese el nivel del participante (Principiante, Intermedio, Avanzado)"
+201. 	>>nivel
+202.	<<"Ingrese la edad del participante"
+203.	>>edad
+204.	<<"Ingrese la ciudad del participante"
+205.	>>ciudad
+206.	<<"Ingrese la mano hábil del participante(derecha/izquierda)"
+207.	>>mano
+
+208.	cadena <-- cadena + "Nombre:" + nombre" + \n" + "Edad:" + edad" + \n" + "Nivel:" +
+			+ nivel" + \n" + "Ciudad:" + ciudad" + \n" + "Mano habil:" + mano" + \n"
+209.	<<cadena
+210. fin función registrarParticipanteTenis
+
+211. función registarParticipanteYoga()
+212.	nombre, x(200) [{A-Z} {a-z} BS]
+213. 	edad, i [0,n]
+214.	nivel, x(200) [{A-Z} {a-z} BS]
+215.	ciudad, x(200) [{A-Z} {a-z} BS]
+216.	estilo, x(500) [{A-Z} {a-z} BS]
+217.	cadena, x(1000) [{A-Z} {a-z} BS] <-- ""
+218.	<<"Ingrese el nombre del participante"
+219.	>>nombre
+220.	<<"Ingrese el nivel del participante (Principiante, Intermedio, Avanzado)"
+221. 	>>nivel
+222.	<<"Ingrese la edad del participante"
+223.	>>edad
+224.	<<"Ingrese la ciudad del participante"
+225.	>>ciudad
+226.	<<"Ingrese el estilo de yoga favorito del participante"
+227.	>>estilo
+
+228.	cadena <-- cadena + "Nombre:" + nombre" + \n" + "Edad:" + edad" + \n" + "Nivel:" +
+			+ nivel" + \n" + "Ciudad:" + ciudad" + \n" + "Estilo favorito:" + estilo" + \n"
+229.	<<cadena
+230. fin función registarParticipanteYoga
+231. fin
+
+	
+
+
+
+
+
+
+
+
+
+
+
+

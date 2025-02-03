@@ -1,0 +1,29 @@
+1. Inicio
+2. Dentro de un ciclo repetitivo, se hace
+3. Si se ingresa "1" se llamara a el procedimiento registrarParticipanteFutbol
+4. Se presenta "Si deseaa salir del ciclo, ingrese "si"
+5. Si se ingresa "2" se llamara a el procedimiento registrarParticipanteNatacion
+6. Se presenta "Si deseaa salir del ciclo, ingrese "si"
+7. Si se ingresa "3" se llamara a el procedimiento registrarParticipanteAtletismo
+8. Se presenta "Si deseaa salir del ciclo, ingrese "si"
+9. Si se ingresa "4" se llamara a el procedimiento registrarParticipanteBasquetbol
+10. Se presenta "Si deseaa salir del ciclo, ingrese "si"
+11. Si se ingresa "5" se llamara a el procedimiento registrarParticipanteCiclismo
+12. Se presenta "Si deseaa salir del ciclo, ingrese "si"
+13. Si se ingresa "6" se llamara a el procedimiento registrarParticipanteTenis
+14. Se presenta "Si deseaa salir del ciclo, ingrese "si"
+15. Si se ingresa "7" se llamara a el procedimiento registrarParticipanteYoga
+16. Se presenta "Si deseaa salir del ciclo, ingrese "si"
+17. Si se ingresa un numero diferente a las opciones previas, se presenta
+18. "Lo sentimos el club no tiene esta opcion"
+19. Se llama a la funcion obtenerInformacion y se envia como parametro el numero
+	de veces que el usuario itero
+20. Se presenta en pantalla el retorno de la funcion obtenerInformacion
+21. Se llama a la funcion obtenerReporte, y se envia como parametro un arreglo
+	de tipo cadena y un arreglo de tipo entero
+22. Se presenta en pantalla el retorno de la funcion obtenerReporte
+23. Fin
+
+
+
+
